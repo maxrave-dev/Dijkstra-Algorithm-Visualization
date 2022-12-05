@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.msMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -307,8 +308,9 @@
             this.Controls.Add(this.flpListProvince);
             this.Controls.Add(this.lbInfo);
             this.Controls.Add(this.msMenuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Đồ án cuối kỳ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.msMenuStrip.ResumeLayout(false);
             this.msMenuStrip.PerformLayout();
