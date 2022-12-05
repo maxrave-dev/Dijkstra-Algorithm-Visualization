@@ -18,9 +18,9 @@ namespace Dijkstra_Vietnam
         {
             InitializeComponent();
         }
-        public List<Province> provinces = new List<Province>();
-        DirectedWeightedGraph g = new DirectedWeightedGraph();
-        private Graphics graph; 
+        public List<Province> provinces = new List<Province>(); //Tạo ra List chứa các tỉnh
+        DirectedWeightedGraph g = new DirectedWeightedGraph(); //Tạo đối tượng DrictedWeightedGraph
+        private Graphics graph; //Tạo đối tượng Graphics để vẽ Map
         private void Form1_Load(object sender, EventArgs e)
         {
             Province haNoi = new Province("Hà Nội", "A", 388, 320);
@@ -43,13 +43,13 @@ namespace Dijkstra_Vietnam
             provinces.Add(laoCai);
             provinces.Add(laiChau);
             provinces.Add(dienBien);
-            Graphics graph = pnMap.CreateGraphics();
+            Graphics graph = pnMap.CreateGraphics(); //tạo Graphics trong panel pnMap để vẽ Map
             for (int i = 0; i < provinces.Count; i++)
             {
-                lvListProvinces.Items.Add(provinces[i].getPointName());
+                lvListProvinces.Items.Add(provinces[i].getPointName()); //Thêm các tỉnh vào ListView
                 lvListProvinces.Items[i].SubItems.Add(provinces[i].getName());
-                g.listPoint.Add(provinces[i].getPoint());
-                g.InsertVertex(provinces[i].getName());
+                g.listPoint.Add(provinces[i].getPoint()); //Thêm tạo độ của các tỉnh vào g.listPoint
+                g.InsertVertex(provinces[i].getName()); //Thêm các tỉnh vào g dưới dạng Vertex
             }
             g.InsertEdge("Điện Biên", "Lai Châu", 141);
             g.InsertEdge("Lai Châu", "Lào Cai", 101);
@@ -65,7 +65,7 @@ namespace Dijkstra_Vietnam
             g.InsertEdge("Lào Cai", "Phú Thọ", 191);
             g.InsertEdge("Phú Thọ", "Hà Nội", 98);
             g.InsertEdge("Hà Giang", "Phú Thọ", 226);
-            g.InsertEdge("Điện Biên", "Hà Nội", 490);
+            g.InsertEdge("Điện Biên", "Hà Nội", 490); //Thêm các cạnh vào g
             cbSource.Items.Add("Điện Biên");
             cbSource.Items.Add("Hà Nội");
             cbSource.Items.Add("Ninh Bình");
@@ -76,7 +76,7 @@ namespace Dijkstra_Vietnam
             cbSource.Items.Add("Hà Giang");
             cbSource.Items.Add("Lào Cai");
             cbSource.Items.Add("Lai Châu");
-            cbSource.Items.Add("Điện Biên");
+            cbSource.Items.Add("Điện Biên"); //Thêm các tỉnh vào Combobox cbSource
             cbDestination.Items.Add("Hà Nội");
             cbDestination.Items.Add("Ninh Bình");
             cbDestination.Items.Add("Quảng Ninh");
@@ -86,10 +86,10 @@ namespace Dijkstra_Vietnam
             cbDestination.Items.Add("Hà Giang");
             cbDestination.Items.Add("Lào Cai");
             cbDestination.Items.Add("Lai Châu");
-            cbDestination.Items.Add("Điện Biên");
+            cbDestination.Items.Add("Điện Biên");////Thêm các tỉnh vào Combobox cbDestination
         }
-        //Vẽ bản đồ ra Panel
-        private void pnMap_Paint(object sender, PaintEventArgs e)
+        
+        private void pnMap_Paint(object sender, PaintEventArgs e) //Vẽ bản đồ ra Panel
         {
             Graphics graph = pnMap.CreateGraphics();
             for (int i = 0; i < provinces.Count; i++)
@@ -102,7 +102,7 @@ namespace Dijkstra_Vietnam
             DrawLine();
         }
 
-        private void DrawLine()
+        private void DrawLine() //vẽ các đường trên Map
         {
                 DrawLine("Điện Biên", "Lai Châu");
                 DrawLine("Lai Châu", "Lào Cai");
@@ -132,7 +132,7 @@ namespace Dijkstra_Vietnam
             graph.DrawString($"{g.adj[x, y]}", new Font("Fira Code", 10), Brushes.Black, new Point((point1.X + point2.X) / 2 - 8, (point1.Y + point2.Y) / 2 + 8));
         }
 
-        private void cbSource_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbSource_SelectedIndexChanged(object sender, EventArgs e) //Khi mà chọn điểm đầu và điểm cuối xong thì thuật toán sẽ chạy và vẽ đường đi ngắn nhất
         {
             if (cbSource.SelectedIndex != -1 && cbDestination.SelectedIndex != -1)
             {
@@ -150,7 +150,7 @@ namespace Dijkstra_Vietnam
             }
         }
 
-        private void cbDestination_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbDestination_SelectedIndexChanged(object sender, EventArgs e) //Khi mà chọn điểm đầu và điểm cuối xong thì thuật toán sẽ chạy và vẽ đường đi ngắn nhất
         {
             if (cbSource.SelectedIndex != -1 && cbDestination.SelectedIndex != -1)
             {
@@ -176,7 +176,7 @@ namespace Dijkstra_Vietnam
             Point point2 = new Point(g.pathIndex[i + 1].X , g.pathIndex[i + 1].Y );
             graph.DrawLine(p, point1, point2);
         }
-
+        //Show danh sách nhóm
         private void mnsListMembers_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Nguyễn Đức Tuấn Minh \nLê Bá Kha\nThân Trọng Đức\nNguyễn Thị Phương Tháo", "Danh sách nhóm");
