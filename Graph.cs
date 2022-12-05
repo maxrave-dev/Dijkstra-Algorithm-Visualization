@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace Dijkstra_Vietnam
 {
-    public class Vertex
+    public class Vertex //Định nghĩa Đỉnh
     {
         public String name;
         public int status;
-        public int predecessor;
-        public int pathLength;
-        public Vertex(String name)
+        public int predecessor; //Đỉnh mà đứng trước nó
+        public int pathLength; //Độ dài đường đi
+        public Vertex(String name) //Constructor khởi tạo
         {
             this.name = name;
         }
@@ -26,18 +26,18 @@ namespace Dijkstra_Vietnam
 
     class DirectedWeightedGraph
     {
-        public readonly int MAX_VERTICES = 30;
+        public readonly int MAX_VERTICES = 30; //Số đỉnh tối đa
 
-        public int n =0;
-        int e;
-        public int[,] adj;
-        public Vertex[] vertexList;
+        public int n = 0; //Số đỉnh hiện tại
+        int e; //thừa
+        public int[,] adj; //lưu giá trị của các cạnh
+        public Vertex[] vertexList; //mảng lưu cấc đỉnh
         private readonly int INFINITY = 9999999;
-        private readonly int PERMANENT = 2;
-        private readonly int TEMPORARY = 1;
-        private readonly int NIL = -1;
-        public List<Point> listPoint = new List<Point>();
-        public List<Point> pathIndex = new List<Point>();
+        private readonly int PERMANENT = 2; //Đỉnh đã xét
+        private readonly int TEMPORARY = 1; //tạm thời
+        private readonly int NIL = -1; 
+        public List<Point> listPoint = new List<Point>(); //lưu toạ độ của các đỉnh đã thêm
+        public List<Point> pathIndex = new List<Point>(); //lưu toạ độ của các đỉnh mà đường đi ngắn nhất đi qua
 
         public DirectedWeightedGraph()
         {
@@ -76,7 +76,7 @@ namespace Dijkstra_Vietnam
 
         }
 
-        public void FindPaths(string source, string last, TextBox tbCost, TextBox tbPath)
+        public void FindPaths(string source, string last, TextBox tbCost, TextBox tbPath) //Tìm đường đi ngắn nhất từ s -> v
         {
             int s = GetIndex(source);
             Dijkstra(s);
@@ -97,7 +97,7 @@ namespace Dijkstra_Vietnam
             }
         }
 
-        public void FindPath(int s, int v, TextBox tbCost, TextBox tbPath)
+        public void FindPath(int s, int v, TextBox tbCost, TextBox tbPath) //Tìm đường đi ngắn nhất từ s đến v nếu s  đến v không phải vô cùng
         {
             int i, u;
             int[] path = new int[n];
@@ -134,7 +134,7 @@ namespace Dijkstra_Vietnam
             tbCost.Text = $"{sd}";
         }
 
-        public int GetIndex(string s)
+        public int GetIndex(string s) //Lấy chỉ số của đỉnh
         {
             for (int i = 0; i < n; i++)
             {
@@ -144,16 +144,16 @@ namespace Dijkstra_Vietnam
             throw new System.InvalidOperationException("Invalid Vertex");
         }
 
-        public void InsertVertex(string name)
+        public void InsertVertex(string name) //Thêm đỉnh vào
         {
             vertexList[n++] = new Vertex(name);
         }
-        private bool IsAdjacent(int u, int v)
+        private bool IsAdjacent(int u, int v) //Kiểm tra có phải đỉnh liền kề đỉnh đang xét hay không
         {
             return adj[u, v] != 0;
         }
 
-        private int TempVertexWithMinPL()
+        private int TempVertexWithMinPL() //Tìm đỉnh tạm thời có độ dài đường đi ngắn nhất
         {
             int min = INFINITY;
             int x = NIL;
@@ -168,7 +168,7 @@ namespace Dijkstra_Vietnam
             return x;
         }
 
-        public void InsertEdge(string v1, string v2, int v3)
+        public void InsertEdge(string v1, string v2, int v3) //thêm cạnh vào
         {
             int i = GetIndex(v1);
             int j = GetIndex(v2);

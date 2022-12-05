@@ -176,5 +176,10 @@ namespace Dijkstra_Vietnam
             Point point2 = new Point(g.pathIndex[i + 1].X , g.pathIndex[i + 1].Y );
             graph.DrawLine(p, point1, point2);
         }
+
+        private void mnsListMembers_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Nguyễn Đức Tuấn Minh \nLê Bá Kha\nThân Trọng Đức\nNguyễn Thị Phương Tháo", "Danh sách nhóm");
+        }
     }
 }

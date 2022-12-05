@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.msMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbInfo = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -54,6 +53,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.mnsListMembers = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuStrip.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flpListProvince.SuspendLayout();
@@ -65,7 +65,6 @@
             // msMenuStrip
             // 
             this.msMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.msMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.msMenuStrip.Name = "msMenuStrip";
@@ -73,14 +72,10 @@
             this.msMenuStrip.TabIndex = 0;
             this.msMenuStrip.Text = "menuStrip1";
             // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
             // aboutToolStripMenuItem
             // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnsListMembers});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
@@ -297,6 +292,13 @@
             this.label4.Text = "Output";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // mnsListMembers
+            // 
+            this.mnsListMembers.Name = "mnsListMembers";
+            this.mnsListMembers.Size = new System.Drawing.Size(180, 22);
+            this.mnsListMembers.Text = "Danh sách nhóm";
+            this.mnsListMembers.Click += new System.EventHandler(this.mnsListMembers_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,7 +330,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip msMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label lbInfo;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
@@ -352,6 +353,7 @@
         private System.Windows.Forms.ListView lvListProvinces;
         public System.Windows.Forms.ColumnHeader clPoint;
         public System.Windows.Forms.ColumnHeader clName;
+        private System.Windows.Forms.ToolStripMenuItem mnsListMembers;
     }
 }
 
