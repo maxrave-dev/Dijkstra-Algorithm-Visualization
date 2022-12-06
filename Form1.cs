@@ -18,6 +18,7 @@ namespace Dijkstra_Vietnam
         {
             InitializeComponent();
         }
+
         public List<Province> provinces = new List<Province>(); //Tạo ra List chứa các tỉnh
         DirectedWeightedGraph g = new DirectedWeightedGraph(); //Tạo đối tượng DrictedWeightedGraph
         private Graphics graph; //Tạo đối tượng Graphics để vẽ Map

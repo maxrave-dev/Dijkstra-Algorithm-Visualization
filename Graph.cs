@@ -35,7 +35,7 @@ namespace Dijkstra_Vietnam
         private readonly int INFINITY = 9999999;
         private readonly int PERMANENT = 2; //Đỉnh đã xét
         private readonly int TEMPORARY = 1; //tạm thời
-        private readonly int NIL = -1; 
+        private readonly int NIL = -1;
         public List<Point> listPoint = new List<Point>(); //lưu toạ độ của các đỉnh đã thêm
         public List<Point> pathIndex = new List<Point>(); //lưu toạ độ của các đỉnh mà đường đi ngắn nhất đi qua
 
@@ -116,7 +116,7 @@ namespace Dijkstra_Vietnam
             if (count >= n)
             {
                 MessageBox.Show("Error!", "Notify!");
-                
+
             }
             path[count] = s;
             for (i = count; i >= 1; i--)

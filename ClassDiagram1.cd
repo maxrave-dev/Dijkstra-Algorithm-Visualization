@@ -1,32 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Lưu các tỉnh vào List provinces rồi sau đó nạp vị trí của các tỉnh vào listPoint của đồ thị">
+    <Position X="3.292" Y="1.844" Height="0.843" Width="1.575" />
+  </Comment>
+  <Comment CommentText="Nạp các đỉnh vào đồ thị">
+    <Position X="7.823" Y="1.708" Height="0.291" Width="2.2" />
+  </Comment>
+  <Comment CommentText="Tìm đường đi với chi phí thấp nhất và xuất thông tin ra Form">
+    <Position X="7.781" Y="3.218" Height="0.479" Width="2.471" />
+  </Comment>
+  <Comment CommentText="Tạo đối tượng Graphics để thực hiện vẽ Map">
+    <Position X="3.25" Y="4.771" Height="0.427" Width="2.242" />
+  </Comment>
   <Class Name="Dijkstra_Vietnam.Vertex">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Position X="5.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAEAAAAAAAAAAQAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Graph.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dijkstra_Vietnam.DirectedWeightedGraph">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="11" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>CAEACAAAAAAAAAIQAAAkAAAAABGAAIACEkAAAAACAAY=</HashCode>
       <FileName>Graph.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="Dijkstra_Vietnam.Form1">
-    <Position X="6.25" Y="0.5" Width="2.75" />
-    <TypeIdentifier>
-      <HashCode>IAAIACAAACAAABEAABCDAAgCCIAsQABIAMQCAQAAACo=</HashCode>
-      <FileName>Form1.cs</FileName>
-    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vertexList" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Dijkstra_Vietnam.Province">
-    <Position X="4" Y="0.5" Width="1.5" />
+    <Position X="0.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAEAgAEACA=</HashCode>
       <FileName>Province.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="Dijkstra_Vietnam.Form1" Collapsed="true">
+    <Position X="5.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAIACAAACAAABEAABCDAAgCCIAsQABIAMQCAQAAACo=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="g" />
+      <Field Name="graph" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="provinces" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="System.Drawing.Graphics" Collapsed="true">
+    <Position X="0.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

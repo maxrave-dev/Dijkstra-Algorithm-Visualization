@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Dijkstra_Vietnam
 {
-    public class Province //Tạo đối tượng Province
+    public class Province//Tạo đối tượng Province
     {
         private string nameProvince { get; set; } //Tên tỉnh
         private string pointName { get; set; } //Kí hiệu trên Map
