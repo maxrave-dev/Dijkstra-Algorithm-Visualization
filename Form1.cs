@@ -67,7 +67,6 @@ namespace Dijkstra_Vietnam
             g.InsertEdge("Phú Thọ", "Hà Nội", 98);
             g.InsertEdge("Hà Giang", "Phú Thọ", 226);
             g.InsertEdge("Điện Biên", "Hà Nội", 490); //Thêm các cạnh vào g
-            cbSource.Items.Add("Điện Biên");
             cbSource.Items.Add("Hà Nội");
             cbSource.Items.Add("Ninh Bình");
             cbSource.Items.Add("Quảng Ninh");
@@ -76,7 +75,8 @@ namespace Dijkstra_Vietnam
             cbSource.Items.Add("Phú Thọ");
             cbSource.Items.Add("Hà Giang");
             cbSource.Items.Add("Lào Cai");
-            cbSource.Items.Add("Lai Châu");  //Thêm các tỉnh vào Combobox cbSource
+            cbSource.Items.Add("Lai Châu");
+            cbSource.Items.Add("Điện Biên"); //Thêm các tỉnh vào Combobox cbSource
             cbDestination.Items.Add("Hà Nội");
             cbDestination.Items.Add("Ninh Bình");
             cbDestination.Items.Add("Quảng Ninh");

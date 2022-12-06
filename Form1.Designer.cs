@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.msMenuStrip = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsListMembers = new System.Windows.Forms.ToolStripMenuItem();
             this.lbInfo = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.mnsListMembers = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenuStrip.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flpListProvince.SuspendLayout();
@@ -79,6 +79,13 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // mnsListMembers
+            // 
+            this.mnsListMembers.Name = "mnsListMembers";
+            this.mnsListMembers.Size = new System.Drawing.Size(164, 22);
+            this.mnsListMembers.Text = "Danh sách nhóm";
+            this.mnsListMembers.Click += new System.EventHandler(this.mnsListMembers_Click);
             // 
             // lbInfo
             // 
@@ -292,13 +299,6 @@
             this.label4.Text = "Output";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // mnsListMembers
-            // 
-            this.mnsListMembers.Name = "mnsListMembers";
-            this.mnsListMembers.Size = new System.Drawing.Size(180, 22);
-            this.mnsListMembers.Text = "Danh sách nhóm";
-            this.mnsListMembers.Click += new System.EventHandler(this.mnsListMembers_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,7 +310,10 @@
             this.Controls.Add(this.flpListProvince);
             this.Controls.Add(this.lbInfo);
             this.Controls.Add(this.msMenuStrip);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Đồ án cuối kỳ";
             this.Load += new System.EventHandler(this.Form1_Load);
