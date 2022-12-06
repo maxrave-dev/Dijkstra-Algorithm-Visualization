@@ -76,8 +76,7 @@ namespace Dijkstra_Vietnam
             cbSource.Items.Add("Phú Thọ");
             cbSource.Items.Add("Hà Giang");
             cbSource.Items.Add("Lào Cai");
-            cbSource.Items.Add("Lai Châu");
-            cbSource.Items.Add("Điện Biên"); //Thêm các tỉnh vào Combobox cbSource
+            cbSource.Items.Add("Lai Châu");  //Thêm các tỉnh vào Combobox cbSource
             cbDestination.Items.Add("Hà Nội");
             cbDestination.Items.Add("Ninh Bình");
             cbDestination.Items.Add("Quảng Ninh");
